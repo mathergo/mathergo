@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Mathéo Duchemin</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand"><a href="index.html">Mathéo Duchemin <span>Ergo D.E</span></a></div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Accueil</a></li>
+            <li><a href="a-propos.html" class="nav-link">À Propos</a></li>
+            <li><a href="enfants.html" class="nav-link">Pôle Enfants</a></li>
+            <li><a href="adultes.html" class="nav-link">Pôle Adultes</a></li>
+            <li><a href="pros.html" class="nav-link">Espace Pro</a></li>
+            <li><a href="contact.html" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">Prendre RDV</a></li>
+        </ul>
+    </nav>
+
+    <section class="section-padding" style="padding-top: 120px; background: #FAFAFA;">
+        <div class="container">
+            <div class="grid-2">
+                
+                <div class="animate-in">
+                    <span class="badge-intro">Contact</span>
+                    <h1>Discutons de vos besoins.</h1>
+                    <p style="margin-bottom: 40px;">Pour un bilan, un suivi ou une simple question, remplissez le formulaire ci-contre ou contactez-moi directement.</p>
+                    
+                    <div style="background: white; padding: 30px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                        <div style="margin-bottom: 25px; display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="font-size: 1.5rem;">📞</div>
+                            <div>
+                                <strong>Par Téléphone</strong>
+                                <p style="margin:0;"><a href="tel:0745000043">07.45.00.00.43</a> </p>
+                                <p style="font-size: 0.8rem; color: #999;">Lun-Ven : 9h-18h</p>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 25px; display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="font-size: 1.5rem;">📧</div>
+                            <div>
+                                <strong>Par Email</strong>
+                                <p style="margin:0;"><a href="mailto:matheoduchemin.ergo@gmail.com">matheoduchemin.ergo@gmail.com</a> </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px; align-items: flex-start;">
+                            <div style="font-size: 1.5rem;">📍</div>
+                            <div>
+                                <strong>Lieux d'intervention</strong>
+                                <p style="margin:0;">Domicile, École, Lieux de vie.</p>
+                                <p style="font-size: 0.8rem; color: #999;">Montpellier & alentours.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+<form class="contact-form animate-in delay-2" action="https://formspree.io/f/xnnebnqv" method="POST">
+    
+    <input type="hidden" name="_next" value="index.html">
+    <input type="hidden" name="_subject" value="Nouveau contact Site Ergo">
+
+    <h3 style="margin-bottom: 20px;">Envoyer un message</h3>
+    
+    <div class="form-group">
+        <label class="form-label" for="nom">Nom & Prénom</label>
+        <input type="text" id="nom" name="nom" class="form-input" required>
+    </div>
+    
+    <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-input" required>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" for="tel">Téléphone</label>
+        <input type="tel" id="tel" name="telephone" class="form-input">
+    </div>
+    
+    <div class="form-group">
+        <label class="form-label" for="objet">Objet</label>
+        <select id="objet" name="objet" class="form-input">
+            <option value="Enfant">Demande pour Enfant</option>
+            <option value="Adulte">Demande pour Adulte</option>
+            <option value="Pro">Professionnel de santé</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea id="message" name="message" class="form-input" rows="4" required></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer</button>
+</form>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Questions Fréquentes</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>Faut-il une ordonnance ?</h4>
+                    <p style="font-size: 0.9rem;">Oui, l'ergothérapie est soumise à prescription médicale.</p>
+                </div>
+                <div class="card">
+                    <h4>Est-ce remboursé ?</h4>
+                    <p style="font-size: 0.9rem;">Pas par la Sécu. Possible via certaines mutuelles ou dossier MDPH.</p>
+                </div>
+                <div class="card">
+                    <h4>Où sont les séances ?</h4>
+                    <p style="font-size: 0.9rem;">Uniquement sur vos lieux de vie (domicile, école).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: white; border-top: 1px solid #eee; padding: 3rem 5%;">
+        <div class="container" style="text-align: center; color: var(--color-text-muted); font-size: 0.9rem;">
+            &copy; 2025 Mathéo Duchemin - <a href="mentions.html">Mentions Légales</a>
+        </div>
+    </footer>
+</body>
+</html>
