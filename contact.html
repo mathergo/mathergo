@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Mathéo Duchemin</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS SPÉCIFIQUE : LA CARTE CONTACT UNIFIÉE */
+        
+        /* Le conteneur global qui lie les deux parties */
+        .contact-wrapper {
+            background: white;
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-soft);
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr; /* Formulaire un peu plus large */
+            overflow: hidden; /* Important pour garder les coins arrondis avec le fond vert */
+            min-height: 550px;
+        }
+
+        /* Partie GAUCHE : Le Formulaire (Fond Blanc) */
+        .contact-form-side {
+            padding: 50px;
+        }
+
+        /* Partie DROITE : Les Infos (Fond Vert Sauge) */
+        .contact-info-side {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* Décoration subtile sur le fond vert */
+        .contact-info-side::before {
+            content: '';
+            position: absolute;
+            top: -50px; right: -50px;
+            width: 200px; height: 200px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        /* Design des items info (sur fond vert) */
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+        
+        .info-item:last-child { margin-bottom: 0; }
+
+        .info-icon {
+            width: 40px; height: 40px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 20px; height: 20px;
+            fill: white;
+        }
+
+        .info-content h4 {
+            color: white; /* Force le blanc pour les titres sur fond vert */
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .info-content p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 900px) {
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .contact-form-side, .contact-info-side { padding: 30px; }
+            .contact-info-side { min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="brand"><a href="index.html">Mathéo Duchemin</a></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="a-propos.html" class="nav-link">À Propos</a></li>
+                <li><a href="enfants.html" class="nav-link">Enfants</a></li>
+                <li><a href="adultes.html" class="nav-link">Adultes</a></li>
+                <li><a href="pros.html" class="nav-link">Pro</a></li>
+                <li><a href="contact.html" class="btn btn-primary active">Prendre RDV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="section-padding text-center" style="padding-bottom: 40px;">
+        <div class="container">
+            <h1>Contactez-moi</h1>
+            <p style="max-width: 600px; margin: 0 auto;">Un projet, une question ou une prise de rendez-vous ? Je vous réponds rapidement.</p>
+        </div>
+    </header>
+
+    <section class="section-padding" style="padding-top: 0;">
+        <div class="container">
+            
+            <div class="contact-wrapper">
+                
+                <div class="contact-form-side">
+                    <h3 style="margin-bottom: 30px; color: var(--color-primary);">Envoyer un message</h3>
+                    
+                    <form action="https://formspree.io/f/xnnebnqv" method="POST">
+                        
+                        <div class="grid-2" style="gap: 20px; grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+                            <div class="form-group" style="margin:0;">
+                                <label class="form-label">Votre Nom</label>
+                                <input type="text" name="nom" class="form-input" placeholder="Nom complet" required>
+                            </div>
+                            <div class="form-group" style="margin:0;">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-input" placeholder="votre@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Objet de la demande</label>
+                            <select name="objet" class="form-input">
+                                <option>Demande de bilan (Enfant)</option>
+                                <option>Demande de bilan (Adulte)</option>
+                                <option>Collaboration professionnelle</option>
+                                <option>Autre question</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea name="message" class="form-input" rows="4" placeholder="Bonjour, je vous contacte car..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer ma demande</button>
+                    </form>
+                    </div>
+
+                <div class="contact-info-side">
+                    <h3 style="color: white; margin-bottom: 30px;">Coordonnées</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.49-5.15-3.8-6.62-6.62l1.97-1.57c.23-.24.31-.56.24-1.01a17.67 17.67 0 0 1-.56-3.53c-.05-.52-.5-1.92-1.92-1.92H4.5c-1.1 0-2 .9-2 2 0 11.03 8.97 20 20 20 1.1 0 2-.9 2-2v-3.51c.06-1.42-1.34-1.48-1.49-1.48z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Téléphone</h4>
+                            <p>07 45 00 00 43</p>
+                            <p style="opacity: 0.7; font-size: 0.85rem;">Lun-Ven, 9h-18h</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>matheoduchemin.ergo@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Zone d'intervention</h4>
+                            <p>Montpellier & Villeneuve-lès-Maguelone</p>
+                            <p style="opacity: 0.7; font-size: 0.85rem;">Domicile & École</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-padding bg-beige">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 50px;">Questions Fréquentes</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h4>Est-ce remboursé ?</h4>
+                    <p class="text-muted">Pas par la Sécurité Sociale. Cependant, certaines mutuelles proposent un forfait. Une prise en charge via la MDPH est possible.</p>
+                </div>
+                <div class="card">
+                    <h4>Faut-il une ordonnance ?</h4>
+                    <p class="text-muted">Oui, l'ergothérapie est une profession paramédicale soumise à prescription médicale (médecin généraliste ou spécialiste).</p>
+                </div>
+                <div class="card">
+                    <h4>Comment monter un dossier MDPH ?</h4>
+                    <p class="text-muted">Je peux vous accompagner dans cette démarche en vous fournissant le bilan ergothérapique et les préconisations nécessaires.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: white; border-top: 1px solid #eee; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p><strong>Mathéo Duchemin</strong> - Ergothérapeute D.E</p>
+            <p style="margin: 10px 0;">Montpellier & Villeneuve-lès-Maguelone | 07 45 00 00 43</p>
+            <p class="text-muted" style="font-size: 0.85rem;">SIRET 923 846 232 000 26 – RPPS 10009956467</p>
+            <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px;"><a href="mentions.html">Mentions Légales</a></p>
+        </div>
+    </footer>
+</body>
+</html>

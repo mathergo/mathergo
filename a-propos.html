@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | Mathéo Duchemin</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS SPÉCIFIQUE POUR LA CARTE */
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .location-icon {
+            background-color: var(--color-bg-alt);
+            color: var(--color-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="brand"><a href="index.html">Mathéo Duchemin</a></div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="a-propos.html" class="nav-link active">À Propos</a></li>
+                <li><a href="enfants.html" class="nav-link">Enfants</a></li>
+                <li><a href="adultes.html" class="nav-link">Adultes</a></li>
+                <li><a href="pros.html" class="nav-link">Pro</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Prendre RDV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section-padding">
+        <div class="container grid-2">
+            <div>
+                <div style="position: relative; width: 350px; height: 350px; margin: 0 auto;">
+    
+    <img src="matheo-photo.jpg" 
+         alt="Mathéo Duchemin" 
+         style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; border-radius: 50%; position: relative; z-index: 2;">
+    
+    <div style="position: absolute; top: 20px; right: -20px; width: 100%; height: 100%; border-radius: 50%; border: 2px solid var(--color-bg-alt); z-index: 1;"></div>
+</div>
+            </div>
+            <div>
+                <h1>A propos de moi</h1>
+                <p style="font-size: 1.1rem; color: var(--color-text-main);">Je m’appelle <strong>Mathéo Duchemin</strong>, ergothérapeute diplômé d’État.</p>
+                <p>J’exerce aujourd’hui en libéral, entre <strong>Montpellier</strong> et <strong>Villeneuve-lès-Maguelone</strong>. Mon métier ne se limite pas à de la rééducation : c'est un accompagnement humain.</p>
+                <p>Que ce soit au cabinet, à domicile ou à l'école, mon objectif est simple : <em>adapter l’environnement à la personne, et non l’inverse.</em></p>
+                
+                <div style="margin-top: 30px; display: flex; gap: 15px;">
+                    <span class="hero-tag">Enfants</span>
+                    <span class="hero-tag">Adultes</span>
+                    <span class="hero-tag">Séniors</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-beige">
+        <div class="container">
+            <div class="text-center" style="max-width: 700px; margin: 0 auto 50px auto;">
+                <h2>Mon approche du soin</h2>
+                <p>Une vision globale, concrète et écologique de l'ergothérapie.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="border: none; background: white;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🌍</div>
+                    <h4>Globale</h4>
+                    <p>Je ne regarde pas seulement le symptôme. Je prends en compte vos capacités, votre histoire, vos projets et ce qui a du sens pour vous.</p>
+                </div>
+                <div class="card" style="border: none; background: white;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🏡</div>
+                    <h4>Adaptée</h4>
+                    <p>L'efficacité se mesure dans la vraie vie. C'est pourquoi j'interviens là où les difficultés se posent : chez vous, en classe ou au travail.</p>
+                </div>
+                <div class="card" style="border: none; background: white;">
+                    <div style="font-size: 2rem; margin-bottom: 15px;">🤝</div>
+                    <h4>Collaborative</h4>
+                    <p>On ne travaille jamais seul. Je coordonne mes actions avec vos médecins, orthophonistes et enseignants pour un suivi cohérent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="grid-2">
+                <div style="padding-right: 20px;">
+                    <h2 style="margin-bottom: 30px;">Où me trouver ?</h2>
+                    
+                    <div class="location-item">
+                        <div class="location-icon">📍</div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Zone géographique</h4>
+                            <p style="margin: 0;" class="text-muted">Montpellier (34000)<br>Villeneuve-lès-Maguelone (34750)<br>Et alentours proches</p>
+                        </div>
+                    </div>
+
+                    <div class="location-item">
+                        <div class="location-icon">🏠</div>
+                        <div>
+                            <h4 style="margin-bottom: 5px;">Lieux d'intervention</h4>
+                            <p style="margin: 0;" class="text-muted">
+                                • <strong>Domicile</strong> : Pour l'analyse de l'environnement.<br>
+                                • <strong>École</strong> : Pour les aménagements en classe.<br>
+                                • <strong>Cabinet</strong> : Pour les bilans spécifiques.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <a href="contact.html" class="btn btn-primary">Prendre rendez-vous</a>
+                    </div>
+                </div>
+
+                <div style="height: 450px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46216.59663784132!2d3.835473783968608!3d43.58242787884784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6af75e9982b11%3A0xc68d60c4060b2986!2s34750%20Villeneuve-l%C3%A8s-Maguelone!5e0!3m2!1sfr!2sfr!4v1709218293521!5m2!1sfr!2sfr" 
+                        class="map-frame" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: white; border-top: 1px solid #eee; padding: 40px 0; text-align: center;">
+        <div class="container">
+            <p><strong>Mathéo Duchemin</strong> - Ergothérapeute D.E</p>
+            <p style="margin: 10px 0;">Montpellier & Villeneuve-lès-Maguelone | 07 45 00 00 43</p>
+            <p class="text-muted" style="font-size: 0.85rem;">SIRET 923 846 232 000 26 – RPPS 10009956467</p>
+            <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px;"><a href="mentions.html">Mentions Légales</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
