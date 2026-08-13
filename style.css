@@ -66,12 +66,12 @@ header img, .grid-2 img {
     box-shadow: 10px 10px 0px var(--color-bg-alt), 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* AJUSTEMENT SPÉCIFIQUE UNIQUEMENT POUR LA PHOTO D'ACCUEIL */
-header img {
+/* FORCE L'AJUSTEMENT DE L'IMAGE SUR LA PAGE D'ACCUEIL */
+.grid-2 img {
     width: 100%;
     height: 480px;
-    object-fit: cover;
-    object-position: center 20%;
+    object-fit: cover !important;
+    object-position: center 25% !important;
 }
 
 /* Petit mouvement sympa au survol de l'image */
