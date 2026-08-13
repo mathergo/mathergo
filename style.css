@@ -69,10 +69,10 @@ header img, .grid-2 img {
 /* --- AJUSTEMENT PARFAIT DE LA PHOTO D'ACCUEIL --- */
 .grid-2 img {
     width: 100%;
-    max-width: 380px;      /* Empêche l'image de s'étaler exagérément */
-    height: auto;          /* Laisse l'image garder sa vraie hauteur naturelle */
-    margin: 0 auto;        /* Centre le bloc proprement */
-    object-fit: contain;  /* Affiche TOUTE l'image sans en couper un seul morceau */
+    max-width: 330px;      /* Légèrement réduit pour un alignement parfait avec le texte */
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 /* Petit mouvement sympa au survol de l'image */
