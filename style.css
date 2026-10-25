@@ -474,3 +474,23 @@ footer a[href^="tel:"] { color: var(--color-primary-dark); font-weight: 600; }
     .portrait-round { width: 260px; }
     .timeline li { padding: 18px 20px; }
 }
+
+/* Citation « Pourquoi ce métier ? » et étape à venir de la frise */
+.why-quote {
+    position: relative;
+    margin: 0;
+    padding: 40px 44px 36px;
+    background: white;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    border-left: 6px solid var(--color-primary-dark);
+}
+.why-quote h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+.why-quote p { font-size: 1.15rem; line-height: 1.7; color: #2D3A31; margin-bottom: 1rem; }
+.why-quote cite { font-style: normal; font-weight: 700; color: var(--color-primary-dark); }
+.why-quote cite::before { content: '— '; }
+.timeline li.timeline-next { background: #EAF2EC; box-shadow: none; border: 2px dashed var(--color-primary-light); }
+.timeline li.timeline-next::before { background: #EAF2EC; border-style: dashed; }
+.timeline li:nth-child(2)::before { background: var(--color-primary-dark); }
+.timeline li:first-child.timeline-next::before { background: #EAF2EC; }
+@media (max-width: 768px) { .why-quote { padding: 28px 24px; } }
