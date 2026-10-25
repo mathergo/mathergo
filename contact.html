@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Mathéo Duchemin</title>
+    <title>Contact & tarifs | Mathéo Duchemin, ergothérapeute à Montpellier</title>
+    <meta name="description" content="Prendre rendez-vous avec Mathéo Duchemin, ergothérapeute à Montpellier et Villeneuve-lès-Maguelone. Bilan enfant 160 €, bilan adulte 200 €.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Mathéo Duchemin | Ergothérapeute Montpellier</title> <meta name="description" content="Cabinet d'ergothérapie à Montpellier et Villeneuve-lès-Maguelone. Bilan et rééducation pour enfants et adultes. Prenez rendez-vous en ligne."> <meta name="robots" content="index, follow"> <link rel="icon" type="image/png" href="favicon.png"> <link rel="apple-touch-icon" href="favicon.png">
     <style>
         /* CSS SPÉCIFIQUE : LA CARTE CONTACT UNIFIÉE */
         
@@ -28,7 +31,7 @@
 
         /* Partie DROITE : Les Infos (Fond Vert Sauge) */
         .contact-info-side {
-            background-color: var(--color-primary);
+            background-color: var(--color-primary-dark);
             color: white;
             padding: 50px;
             display: flex;
@@ -110,8 +113,8 @@
 
     <header class="section-padding text-center" style="padding-bottom: 40px;">
         <div class="container">
-            <h1>Contactez-moi</h1>
-            <p style="max-width: 600px; margin: 0 auto;">Un projet, une question ou une prise de rendez-vous ? Je vous réponds rapidement.</p>
+            <h1>Parlons de votre situation</h1>
+            <p style="max-width: 620px; margin: 0 auto;">Laissez-moi quelques mots et votre numéro : je vous rappelle rapidement pour faire le point, sans engagement. Vous préférez parler tout de suite ? <a href="tel:+33745000043" class="link-strong">07 45 00 00 43</a></p>
         </div>
     </header>
 
@@ -121,37 +124,50 @@
             <div class="contact-wrapper">
                 
                 <div class="contact-form-side">
-                    <h3 style="margin-bottom: 30px; color: var(--color-primary);">Envoyer un message</h3>
-                    
-                    <form action="https://formspree.io/f/xnnebnqv" method="POST">
-                        
-                        <div class="grid-2" style="gap: 20px; grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
-                            <div class="form-group" style="margin:0;">
-                                <label class="form-label">Votre Nom</label>
-                                <input type="text" name="nom" class="form-input" placeholder="Nom complet" required>
+                    <h3 style="margin-bottom: 30px; color: var(--color-primary-dark);">Demander un rappel</h3>
+
+                    <form id="rdv-form" action="https://formspree.io/f/xnnebnqv" method="POST" novalidate>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="nom">Votre nom <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="nom" name="nom" class="form-input" placeholder="Nom complet" autocomplete="name" required>
                             </div>
-                            <div class="form-group" style="margin:0;">
-                                <label class="form-label">Email</label>
-                                <input type="email" name="email" class="form-input" placeholder="votre@email.com" required>
+                            <div class="form-group">
+                                <label class="form-label" for="telephone">Téléphone <span class="req" aria-hidden="true">*</span></label>
+                                <input type="tel" id="telephone" name="telephone" class="form-input"
+                                       placeholder="06 12 34 56 78" autocomplete="tel" inputmode="tel"
+                                       pattern="^(?:(?:\+|00)33\s?|0)[1-9](?:[\s.\-]?\d{2}){4}$"
+                                       aria-describedby="telephone-aide telephone-erreur" required>
+                                <small id="telephone-aide" class="form-hint">Pour que je puisse vous rappeler.</small>
+                                <small id="telephone-erreur" class="form-error" aria-live="polite"></small>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Objet de la demande</label>
-                            <select name="objet" class="form-input">
-                                <option>Demande de bilan (Enfant)</option>
-                                <option>Demande de bilan (Adulte)</option>
-                                <option>Collaboration professionnelle</option>
-                                <option>Autre question</option>
+                            <label class="form-label" for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="votre@email.com" autocomplete="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="objet">Votre demande concerne</label>
+                            <select id="objet" name="objet" class="form-input">
+                                <option value="Demande de bilan (Enfant)">Bilan enfant (160 €)</option>
+                                <option value="Demande de bilan (Adulte)">Bilan adulte (200 €)</option>
+                                <option value="Suivi / rééducation (devis)">Suivi / rééducation (sur devis)</option>
+                                <option value="Collaboration professionnelle">Je suis professionnel(le)</option>
+                                <option value="Autre question">Une autre question</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Message</label>
-                            <textarea name="message" class="form-input" rows="4" placeholder="Bonjour, je vous contacte car..." required></textarea>
+                            <label class="form-label" for="message">Message <span class="req" aria-hidden="true">*</span></label>
+                            <textarea id="message" name="message" class="form-input" rows="4" placeholder="Bonjour, je vous contacte car..." required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer ma demande</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Être rappelé(e)</button>
+                        <p class="form-note">* Champs obligatoires. Vos informations servent uniquement à vous recontacter (<a href="mentions.html">mentions légales</a>).</p>
+                        <p id="form-statut" class="form-status" role="status" aria-live="polite"></p>
                     </form>
                     </div>
 
@@ -164,7 +180,7 @@
                         </div>
                         <div class="info-content">
                             <h4>Téléphone</h4>
-                            <p>07 45 00 00 43</p>
+                            <p><a href="tel:+33745000043">07 45 00 00 43</a></p>
                             <p style="opacity: 0.7; font-size: 0.85rem;">Lun-Ven, 9h-18h</p>
                         </div>
                     </div>
@@ -175,7 +191,7 @@
                         </div>
                         <div class="info-content">
                             <h4>Email</h4>
-                            <p>matheoduchemin.ergo@gmail.com</p>
+                            <p><a href="mailto:matheoduchemin.ergo@gmail.com">matheoduchemin.ergo@gmail.com</a></p>
                         </div>
                     </div>
 
@@ -196,10 +212,44 @@
         </div>
     </section>
 
+    <section class="section-padding" id="tarifs" style="padding-top: 0;">
+        <div class="container">
+            <div class="text-center" style="max-width: 640px; margin: 0 auto 40px auto;">
+                <h2 style="margin-bottom: 1rem;">Les tarifs, en toute transparence</h2>
+                <p>Pas de mauvaise surprise : voici ce que coûte un bilan. Pour le suivi, on en parle ensemble une fois le bilan fait.</p>
+            </div>
+            <div class="price-grid">
+                <div class="price-card">
+                    <p class="price-label">Bilan enfant</p>
+                    <p class="price-amount">160 €</p>
+                    <p class="price-detail">Entretien avec vous et votre enfant, tests normés, mises en situation ludiques et compte-rendu écrit sous 2 semaines.</p>
+                    <a href="contact.html?objet=enfant#rdv-form" class="btn btn-primary" data-objet="enfant">Demander ce bilan</a>
+                </div>
+                <div class="price-card">
+                    <p class="price-label">Bilan adulte</p>
+                    <p class="price-amount">200 €</p>
+                    <p class="price-detail">Je me déplace chez vous ou sur votre lieu de travail pour évaluer vos capacités et votre environnement réel.</p>
+                    <a href="contact.html?objet=adulte#rdv-form" class="btn btn-primary" data-objet="adulte">Demander ce bilan</a>
+                </div>
+                <div class="price-card">
+                    <p class="price-label">Séances de suivi</p>
+                    <p class="price-amount price-amount-text">Sur devis</p>
+                    <p class="price-detail">Le nombre et le rythme des séances dépendent de vos objectifs. Je vous fais un devis clair après notre échange.</p>
+                    <a href="contact.html?objet=suivi#rdv-form" class="btn btn-outline" data-objet="suivi">En parler</a>
+                </div>
+            </div>
+            <p class="text-center text-muted" style="margin-top: 25px;">Non remboursé par la Sécurité sociale. Certaines mutuelles prennent en charge une partie des séances, et une aide est possible via la MDPH.</p>
+        </div>
+    </section>
+
     <section class="section-padding bg-beige">
         <div class="container">
-            <h2 class="text-center" style="margin-bottom: 50px;">Questions Fréquentes</h2>
-            <div class="grid-3">
+            <h2 class="text-center" style="margin-bottom: 50px;">Questions fréquentes</h2>
+            <div class="grid-faq">
+                <div class="card">
+                    <h4>Combien coûte un bilan ?</h4>
+                    <p class="text-muted">160 € pour un enfant, 200 € pour un adulte. Les séances de suivi sont sur devis, après un premier échange.</p>
+                </div>
                 <div class="card">
                     <h4>Est-ce remboursé ?</h4>
                     <p class="text-muted">Pas par la Sécurité Sociale. Cependant, certaines mutuelles proposent un forfait. Une prise en charge via la MDPH est possible.</p>
@@ -219,11 +269,96 @@
     <footer style="background-color: white; border-top: 1px solid #eee; padding: 40px 0; text-align: center;">
         <div class="container">
             <p><strong>Mathéo Duchemin</strong> - Ergothérapeute D.E</p>
-            <p style="margin: 10px 0;">Montpellier & Villeneuve-lès-Maguelone | 07 45 00 00 43</p>
+            <p style="margin: 10px 0;">Montpellier & Villeneuve-lès-Maguelone | <a href="tel:+33745000043">07 45 00 00 43</a></p>
             <p class="text-muted" style="font-size: 0.85rem;">SIRET 923 846 232 000 26 – RPPS 10009956467</p>
             <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px;"><a href="mentions.html">Mentions Légales</a></p>
         </div>
     </footer>
+
+    <div class="mobile-cta">
+        <a href="tel:+33745000043" class="btn btn-primary">Appeler</a>
+        <a href="#rdv-form" class="btn btn-outline">Être rappelé(e)</a>
+    </div>
+
+    <script>
+    (function () {
+        var form = document.getElementById('rdv-form');
+        if (!form) return;
+        var tel = document.getElementById('telephone');
+        var telErreur = document.getElementById('telephone-erreur');
+        var statut = document.getElementById('form-statut');
+        var bouton = form.querySelector('button[type="submit"]');
+        var objet = document.getElementById('objet');
+
+        // Pré-sélectionne l'objet depuis le lien (?objet=enfant | adulte | suivi | pro)
+        var choix = { enfant: 0, adulte: 1, suivi: 2, pro: 3 };
+        var param = new URLSearchParams(window.location.search).get('objet');
+        if (param && choix[param] !== undefined) objet.selectedIndex = choix[param];
+        document.querySelectorAll('[data-objet]').forEach(function (lien) {
+            lien.addEventListener('click', function (e) {
+                e.preventDefault();
+                objet.selectedIndex = choix[lien.getAttribute('data-objet')];
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('nom').focus({ preventScroll: true });
+            });
+        });
+
+        // Numéro français : 06 12 34 56 78, 0612345678, 06.12.34.56.78, +33 6 12 34 56 78, 0033...
+        var TEL_FR = /^(?:(?:\+|00)33\s?|0)[1-9](?:[\s.\-]?\d{2}){4}$/;
+
+        function verifierTel() {
+            var v = tel.value.trim();
+            var msg = '';
+            if (!v) msg = 'Merci d’indiquer votre numéro de téléphone.';
+            else if (!TEL_FR.test(v)) msg = 'Format attendu : 06 12 34 56 78 ou +33 6 12 34 56 78.';
+            tel.setCustomValidity(msg);
+            telErreur.textContent = msg;
+            tel.classList.toggle('is-invalid', !!msg);
+            tel.setAttribute('aria-invalid', msg ? 'true' : 'false');
+            return !msg;
+        }
+
+        tel.addEventListener('blur', function () {
+            var chiffres = tel.value.replace(/[^\d+]/g, '');
+            if (/^0[1-9]\d{8}$/.test(chiffres)) tel.value = chiffres.replace(/(\d{2})(?=\d)/g, '$1 ');
+            if (tel.value.trim()) verifierTel();
+        });
+        tel.addEventListener('input', function () {
+            if (tel.classList.contains('is-invalid')) verifierTel();
+        });
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            verifierTel();
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                var premier = form.querySelector(':invalid');
+                if (premier) premier.focus();
+                return;
+            }
+            bouton.disabled = true;
+            bouton.textContent = 'Envoi en cours…';
+            statut.className = 'form-status';
+            statut.textContent = '';
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            }).then(function (rep) {
+                if (!rep.ok) throw new Error('envoi');
+                form.reset();
+                statut.textContent = 'Merci ! Votre demande est bien envoyée. Je vous rappelle très vite.';
+                statut.classList.add('is-success');
+            }).catch(function () {
+                statut.textContent = 'Oups, l’envoi n’a pas fonctionné. Appelez-moi directement au 07 45 00 00 43.';
+                statut.classList.add('is-error');
+            }).then(function () {
+                bouton.disabled = false;
+                bouton.textContent = 'Être rappelé(e)';
+            });
+        });
+    })();
+    </script>
 </body>
 
 </html>
