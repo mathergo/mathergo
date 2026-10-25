@@ -639,3 +639,6 @@ header.section-padding {
     .mdph-steps li { padding: 20px 20px 20px 70px; }
     .mdph-steps li::before { left: 18px; }
 }
+
+/* Titres : retour à la ligne équilibré */
+h1, h2, h3 { text-wrap: balance; }
