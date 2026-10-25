@@ -669,3 +669,17 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .portrait-badge::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: #F2B66D; }
 @media (max-width: 768px) { .portrait-round { width: 240px; } .portrait-badge { left: -4%; } }
+
+/* Étiquette au-dessus des titres : style « sur-titre » épuré (remplace le cadre) */
+.hero-tag {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: none; border: 0; box-shadow: none; border-radius: 0; padding: 0;
+    color: var(--color-primary-dark);
+    font-size: .78rem; font-weight: 700; letter-spacing: 1.4px; line-height: 1.5;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+.hero-tag::before { content: ''; flex-shrink: 0; width: 28px; height: 2px; border-radius: 2px; background: #F2B66D; }
+.text-center .hero-tag::after { content: ''; flex-shrink: 0; width: 28px; height: 2px; border-radius: 2px; background: #F2B66D; }
+@media (max-width: 768px) { .hero-tag { font-size: .7rem; letter-spacing: .6px; gap: 8px; } .hero-tag::before, .text-center .hero-tag::after { width: 20px; } }
+@media (max-width: 480px) { .tag-extra { display: none; } }
