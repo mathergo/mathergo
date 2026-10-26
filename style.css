@@ -721,3 +721,10 @@ h1, h2, h3 { text-wrap: balance; }
     .nav-menu .btn { padding: 10px 14px; font-size: .82rem; }
     .brand a { font-size: 1.1rem; }
 }
+
+/* Bandeau avis Google (page Contact) */
+.review-band { display: flex; align-items: center; justify-content: space-between; gap: 24px; background: white; border-radius: var(--radius-card); padding: 30px 36px; box-shadow: var(--shadow-soft); border-left: 5px solid #F2B66D; }
+.review-band h2 { font-size: 1.5rem; margin-bottom: .4rem; }
+.review-band p { margin: 0; }
+.review-band .btn { white-space: nowrap; }
+@media (max-width: 768px) { .review-band { flex-direction: column; align-items: flex-start; padding: 26px 22px; } }
